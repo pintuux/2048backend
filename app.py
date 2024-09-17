@@ -6,10 +6,9 @@ import subprocess
 app = Flask(__name__)
 CORS(app)  # Enable cross-origin requests for communication with React
 
-@app.route('/', methods=['GET'])
-def homePage():
-    return jsonify("Server is running on port 5000")
-
+@app.route('/')
+def home():
+    return jsonify(message="Server is running")
 @app.route('/start-game', methods=['GET'])
 def start_game():
     try:
