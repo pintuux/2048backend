@@ -36,7 +36,9 @@ CORS(app)
 matrix = logicfinal.start_game()
 logicfinal.add_new_2(matrix)
 logicfinal.add_new_2(matrix)
-
+@app.route('/')
+def homepage():
+    return jsonify("server is running")
 @app.route('/start-game', methods=['GET'])
 def start_game():
     global matrix
