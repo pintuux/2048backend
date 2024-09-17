@@ -55,7 +55,7 @@ class Game2048(Frame):
         self.update_idletasks()
 
     def key_down(self, event):
-        key = repr(event.char)
+        key = event.keysym  # Use keysym to capture special keys like arrows
         if key in self.commands:
             self.matrix, changed = self.commands[key](self.matrix)
             if changed:
